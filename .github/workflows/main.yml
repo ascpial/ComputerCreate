@@ -38,3 +38,16 @@ jobs:
           asset_path: ./ComputerCreate.zip
           asset_name: ComputerCreate.zip
           asset_content_type: application/zip
+      
+      - name: Upload to Modrinth
+        uses: RubixDev/modrinth-upload@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          file_path: ./ComputerCreate.zip
+          name: ComputerCreate ${{ github.event.release.tag_name }}
+          version: ${{ github.event.release.tag_name }}
+          changelog: ${{ github.event.release.body }}
+          game_versions: 1.18
+          release_type: beta
+          featured: true
+          project_id: PtgHJyfu
