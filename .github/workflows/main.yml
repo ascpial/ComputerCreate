@@ -51,3 +51,4 @@ jobs:
           release_type: beta
           featured: true
           project_id: PtgHJyfu
+          loaders: forge
