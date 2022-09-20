@@ -51,7 +51,7 @@ def get_resourcepack_files(path: str) -> list:
                 # root_dir=os.path.join(path, folder), # apparently this is not working with python 3.8
                 recursive=True,
             ):
-                files.append(os.path.join(path, folder, file))
+                files.append(file)
     
     for file in ROOT_FILES:
         file_path = os.path.join(path, file)
