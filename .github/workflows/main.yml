@@ -40,7 +40,7 @@ jobs:
           asset_content_type: application/zip
       
       - name: Upload to Modrinth
-        uses: RubixDev/modrinth-upload@v1
+        uses: RubixDev/modrinth-upload@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           file_path: ./ComputerCreate.zip
