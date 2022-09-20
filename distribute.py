@@ -41,7 +41,7 @@ FILES = [
     "**/*.png",
 ]
 
-def get_resourcepack_files(path: str) -> list[str]:
+def get_resourcepack_files(path: str) -> list:
     files = []
 
     for folder in ROOT_FOLDERS:
@@ -60,7 +60,7 @@ def get_resourcepack_files(path: str) -> list[str]:
     
     return files
 
-def create_archive(destination: str, files: list[str]) -> zipfile.ZipFile:
+def create_archive(destination: str, files: list) -> zipfile.ZipFile:
     """Create a zip archive from a list of files
     destination: the path of the zip file
     files: the list of files to include in the archive
