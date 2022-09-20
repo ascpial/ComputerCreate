@@ -25,5 +25,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run the resource pack packager
-        run: python distribute.py
+        run: python3.10 distribute.py
         
