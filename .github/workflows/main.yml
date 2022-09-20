@@ -25,5 +25,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run the resource pack packager
-        run: python3 distribute.py
+        run: |
+          cd $GITHUB_WORKSPACE
+          python3 distribute.py
         
