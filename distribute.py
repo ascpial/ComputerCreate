@@ -47,8 +47,8 @@ def get_resourcepack_files(path: str) -> list:
     for folder in ROOT_FOLDERS:
         for pattern in FILES:
             for file in glob.glob(
-                pattern,
-                # root_dir=os.path.join(path, folder), # apparently this is not working with pytho
+                os.path.join(path, folder, pattern),
+                # root_dir=os.path.join(path, folder), # apparently this is not working with python 3.8
                 recursive=True,
             ):
                 files.append(os.path.join(path, folder, file))
