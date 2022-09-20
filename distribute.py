@@ -41,17 +41,17 @@ FILES = [
     "**/*.png",
 ]
 
-def get_resourcepack_files(path: str) -> list[str]:
+def get_resourcepack_files(path: str) -> list:
     files = []
 
     for folder in ROOT_FOLDERS:
         for pattern in FILES:
             for file in glob.glob(
-                pattern,
-                root_dir=os.path.join(path, folder),
+                os.path.join(path, folder, pattern),
+                # root_dir=os.path.join(path, folder), # apparently this is not working with python 3.8
                 recursive=True,
             ):
-                files.append(os.path.join(path, folder, file))
+                files.append(file)
     
     for file in ROOT_FILES:
         file_path = os.path.join(path, file)
@@ -60,7 +60,7 @@ def get_resourcepack_files(path: str) -> list[str]:
     
     return files
 
-def create_archive(destination: str, files: list[str]) -> zipfile.ZipFile:
+def create_archive(destination: str, files: list) -> zipfile.ZipFile:
     """Create a zip archive from a list of files
     destination: the path of the zip file
     files: the list of files to include in the archive
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     except FileNotFoundError:
         configuration = {
             "folder": ".",
-            "destination": "output/ComputerCreate.zip",
+            "destination": "ComputerCreate.zip",
             "file_outputs": [],
         }
     files = get_resourcepack_files(configuration.get('folder', '.'))
