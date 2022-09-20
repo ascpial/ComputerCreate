@@ -28,4 +28,13 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           python3 distribute.py
-        
+      
+      - name: Upload to the GitHub release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: $GITHUB_WORKSPACE/ComputerCraft.zip
+          asset_name: ComputerCraft.zip
+          asset_content_type: application/zip
