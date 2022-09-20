@@ -29,16 +29,6 @@ jobs:
           cd $GITHUB_WORKSPACE
           python3 distribute.py
       
-      - name: Upload to the GitHub release
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./ComputerCreate.zip
-          asset_name: ComputerCreate.zip
-          asset_content_type: application/gzip
-      
       - name: Upload to Modrinth
         uses: RubixDev/modrinth-upload@v1.0.0
         with:
