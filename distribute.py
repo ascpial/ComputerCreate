@@ -77,7 +77,7 @@ if __name__ == "__main__":
     except FileNotFoundError:
         configuration = {
             "folder": ".",
-            "destination": "output/ComputerCreate.zip",
+            "destination": "ComputerCreate.zip",
             "file_outputs": [],
         }
     files = get_resourcepack_files(configuration.get('folder', '.'))
