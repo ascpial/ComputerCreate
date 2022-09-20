@@ -37,6 +37,7 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./ComputerCreate.zip
           asset_name: ComputerCreate.zip
+          asset_content_type: application/gzip
       
       - name: Upload to Modrinth
         uses: RubixDev/modrinth-upload@v1.0.0
