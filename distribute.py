@@ -1,4 +1,12 @@
 """
+Copyright © 2022 ascpial
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 This python scripts helps you create a zip file of the resource pack, without
 including source files, python scripts and documentation.
 
@@ -33,17 +41,17 @@ FILES = [
     "**/*.png",
 ]
 
-def get_resourcepack_files(path: str) -> list[str]:
+def get_resourcepack_files(path: str) -> list:
     files = []
 
     for folder in ROOT_FOLDERS:
         for pattern in FILES:
             for file in glob.glob(
-                pattern,
-                root_dir=os.path.join(path, folder),
+                os.path.join(path, folder, pattern),
+                # root_dir=os.path.join(path, folder), # apparently this is not working with python 3.8
                 recursive=True,
             ):
-                files.append(os.path.join(path, folder, file))
+                files.append(file)
     
     for file in ROOT_FILES:
         file_path = os.path.join(path, file)
@@ -52,7 +60,7 @@ def get_resourcepack_files(path: str) -> list[str]:
     
     return files
 
-def create_archive(destination: str, files: list[str]) -> zipfile.ZipFile:
+def create_archive(destination: str, files: list) -> zipfile.ZipFile:
     """Create a zip archive from a list of files
     destination: the path of the zip file
     files: the list of files to include in the archive
@@ -69,7 +77,7 @@ if __name__ == "__main__":
     except FileNotFoundError:
         configuration = {
             "folder": ".",
-            "destination": "output/ComputerCreate.zip",
+            "destination": "ComputerCreate.zip",
             "file_outputs": [],
         }
     files = get_resourcepack_files(configuration.get('folder', '.'))
