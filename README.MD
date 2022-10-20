@@ -8,6 +8,8 @@ With this pack your computers will no longer looks out of place!
 
 The pack change the textures of each block, and improve the GUIs of computers and turtles.
 
+You can find this pack on [Modrinth](https://modrinth.com/resourcepack/computercreate)!
+
 ## Previews
 
 <details>
