@@ -12,8 +12,10 @@ You can find this pack on [Modrinth](https://modrinth.com/resourcepack/computerc
 
 ## Previews
 
+![(Almost) everything!](screenshots/(Almost)%20everything.png)
+
 <details>
-<summary>Computers</summary>
+<summary> Computers </summary>
 <br>
 
 ![Normal computer](screenshots/Normal%20computer.png)
@@ -25,20 +27,12 @@ You can find this pack on [Modrinth](https://modrinth.com/resourcepack/computerc
 </details>
 
 <details>
-<summary>Turtles</summary>
-
-![Both turtles](screenshots/Both%20turtles.png)
-
-![Colored turtles](screenshots/Colored%20turtles.png)
-
-</details>
-
-<details>
-<sumary> Small example setups </summary>
+<sumary> Misc </summary>
+<br>
 
 ![Small setup example](screenshots/Small%20setup%20example.png)
 
-![Setup with all modem types](screenshots/All%20modem%20variants.png)
+![Colored textures](screenshots/Colored%20things!.png)
 
 </details>
 
@@ -49,11 +43,15 @@ You can find this pack on [Modrinth](https://modrinth.com/resourcepack/computerc
 
 ![Advanced computer GUI](screenshots/Advanced%20computer%20GUI.png)
 
-![Command computer GUI](screenshots/Command%20computer%20GUI.png)
+![Command computer GUI](screenshots/Creative%20computer%20GUI.png)
 
 ![Normal pocket computer GUI](screenshots/Normal%20pocket%20compuer%20GUI.png)
 
 ![Advanced pocket computer GUI](screenshots/Advanced%20pocket%20computer%20GUI.png)
+
+![Normal turtle GUI](screenshots/Normal%20turtle%20GUI.png)
+
+![Advanced turtle GUI](screenshots/Advanced%20turtle%20GUI.png)
 
 </details>
 
