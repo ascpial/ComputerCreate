@@ -1,4 +1,4 @@
-name: Publish on modrinth
+name: Publish on platforms
 
 on:
   # Triggers the action when a release is published
@@ -20,6 +20,15 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           python3 distribute.py
+      
+      # Upload the new release on Curseforge
+      - name: "Upload to CurseForge"
+        uses: itsmeow/curseforge-upload@v3
+        with:
+          file_path: "./ComputerCreate.zip"
+          game_endpoint: "minecraft"
+          project_id: "603936"
+          token: "${{ secrets.CF_API_TOKEN }}"
       
       # Upload the new release on Modrinth
       - name: Upload to Modrinth
