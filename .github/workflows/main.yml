@@ -25,10 +25,12 @@ jobs:
       - name: "Upload to CurseForge"
         uses: itsmeow/curseforge-upload@v3
         with:
+          token: "${{ secrets.CF_API_TOKEN }}"
           file_path: "./ComputerCreate.zip"
           game_endpoint: "minecraft"
           project_id: "603936"
-          token: "${{ secrets.CF_API_TOKEN }}"
+          changelog: ${{ github.event.release.body }}
+          game_versions: 1.18
       
       # Upload the new release on Modrinth
       - name: Upload to Modrinth
