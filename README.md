@@ -10,6 +10,10 @@ The pack change the textures of each block, and improve the GUIs of computers an
 
 You can find this pack on [Modrinth](https://modrinth.com/resourcepack/computercreate) and [CurseForge](https://www.curseforge.com/minecraft/texture-packs/computercreate)!
 
+> **Note**
+> This pack is made for the 1.18 version of minecraft, however you can use it in 1.19 just fine by ignoring the warning.
+> Other newer versions of minecraft such as 1.16 should be fine, but have not been tested.
+
 ## Previews
 
 ![(Almost) everything!](screenshots/(Almost)%20everything.png)
