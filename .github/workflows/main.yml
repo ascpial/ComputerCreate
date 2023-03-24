@@ -30,7 +30,7 @@ jobs:
           game_endpoint: "minecraft"
           project_id: "603936"
           changelog: ${{ github.event.release.body }}
-          game_versions: 1.18
+          game_versions: "8830"
       
       # Upload the new release on Modrinth
       - name: Upload to Modrinth
