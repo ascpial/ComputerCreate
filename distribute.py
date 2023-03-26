@@ -30,6 +30,8 @@ import zipfile
 ROOT_FILES = [
     "pack.png",
     "pack.mcmeta",
+    "CREDITS.txt",
+    "LICENCE.txt",
 ]
 ROOT_FOLDERS = [
     "assets"
