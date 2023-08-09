@@ -1,8 +1,8 @@
 <p align=center><img src="docs/full_logo.png" width=200px></p>
 
-<h1 align=center>Computer Create</h1>
+<h1 align=center>ComputerCreate</h1>
 
-Computer Create is a resource pack for minecraft that apply the texture style of the [Create Mod](https://modrinth.com/mod/create) to all recent flavors of ComputerCraft (CC:Tweaked for forge, CC:Retistched for fabric).
+ComputerCreate is a resource pack for minecraft that apply the texture style of the [Create Mod](https://modrinth.com/mod/create) to all recent flavors of ComputerCraft (CC:Tweaked for forge, CC:Retistched for fabric).
 
 With this pack your computers will no longer looks out of place!
 
