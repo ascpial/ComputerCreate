@@ -83,7 +83,6 @@ if __name__ == "__main__":
     parser.add_argument("--max", type=int, help="The maximum pack_format version to accpet, crashes if not matching")
 
     args = parser.parse_args()
-    print(args)
 
     if args.min is not None or args.max is not None:
         pack_version = json.load(open("pack.mcmeta", 'r'))["pack"]["pack_format"]
