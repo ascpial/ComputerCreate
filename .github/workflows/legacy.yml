@@ -1,4 +1,4 @@
-name: Publish on platforms
+name: Publish on platforms (legacy)
 
 on:
   # Triggers the action when a release is published
@@ -9,6 +9,7 @@ on:
 jobs:
   publish:
    # linux best
+    name: Publish legacy versions
     runs-on: ubuntu-latest
   
     steps:

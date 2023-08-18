@@ -1,5 +1,4 @@
-name: Publish on platforms
-
+name: Publish on platforms (latest)
 on:
   # Triggers the action when a release is published
   release:
@@ -9,6 +8,7 @@ on:
 jobs:
   publish:
    # linux best
+    name: Publish latest versions
     runs-on: ubuntu-latest
   
     steps:
