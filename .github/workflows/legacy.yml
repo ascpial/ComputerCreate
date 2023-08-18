@@ -19,7 +19,7 @@ jobs:
       - name: Run the resource pack packager
         run: |
           cd $GITHUB_WORKSPACE
-          python3 distribute.py
+          python3 distribute.py --min 8 --max 13 
       
       # Upload the new release on Curseforge
       - name: "Upload to CurseForge"

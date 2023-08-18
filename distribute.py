@@ -22,10 +22,12 @@ pack if needed.
 """
 
 import os
+import sys
 import glob
 import json
 import shutil
 import zipfile
+import argparse
 
 ROOT_FILES = [
     "pack.png",
@@ -73,6 +75,24 @@ def create_archive(destination: str, files: list) -> zipfile.ZipFile:
         archive.write(file)
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        prog='Texture pack packager',
+        description='Takes the resource pack and removes all sources files',
+    )
+    parser.add_argument("--min", type=int, help="The minimum pack_format version to accept, crashes if not matching")
+    parser.add_argument("--max", type=int, help="The maximum pack_format version to accpet, crashes if not matching")
+
+    args = parser.parse_args()
+    print(args)
+
+    if args.min is not None or args.max is not None:
+        pack_version = json.load(open("pack.mcmeta", 'r'))["pack"]["pack_format"]
+        if args.min is not None and pack_version < args.min:
+            print("The pack_format is below the minimal version required")
+            sys.exit(10)
+        if args.max is not None and pack_version > args.max:
+            print("The pack_format is greater than the maximal version required")
+            sys.exit(11)
     try:
         with open('./config.json') as file:
             configuration = json.load(file)
@@ -88,12 +108,12 @@ if __name__ == "__main__":
         files,
     )
     print(f"📄 Zip created at {configuration.get('destination', 'output/ComputerCreate.zip')}")
-    
+
     for file in configuration.get('file_outputs', []):
         shutil.copy(
             configuration.get("destination", "output/ComputerCreate.zip"),
             file,
         )
         print(f"💾 File copied to {file}")
-    
+
     print("✅ All done !")
