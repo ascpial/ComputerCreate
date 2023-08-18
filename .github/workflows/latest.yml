@@ -30,7 +30,7 @@ jobs:
           game_endpoint: "minecraft"
           project_id: "603936"
           changelog: ${{ github.event.release.body }}
-          game_versions: "Minecraft 1.16, Minecraft 1.17, Minecraft 1.18, Minecraft 1.19"
+          game_versions: "Minecraft 1.20"
       
       # Upload the new release on Modrinth
       - name: Upload to Modrinth
@@ -41,7 +41,7 @@ jobs:
           name: ComputerCreate ${{ github.event.release.tag_name }}
           version: ${{ github.event.release.tag_name }}
           changelog: ${{ github.event.release.body }}
-          game_versions: "1.16, 1.17, 1.18, 1.19"
+          game_versions: "1.20"
           release_type: release
           featured: true
           project_id: KqGEAQeu
