@@ -1,7 +1,7 @@
 {
     "pack": {
         "description": "Create-like textures for ComputerCraft",
-        "pack_format": 8
+        "pack_format": 15
     },
     "licence": "Creative Commons Attribution 4.0 International License",
     "licence_url": "https://creativecommons.org/licenses/by/4.0/"
