@@ -7,7 +7,6 @@ on:
 
 jobs:
   publish:
-   # linux best
     name: Publish latest versions
     runs-on: ubuntu-latest
   
@@ -15,7 +14,7 @@ jobs:
       # Get the source code
       - uses: actions/checkout@v3
 
-      # Package the resource pack in a nice package
+      # Package the resource pack nicely
       - name: Run the resource pack packager
         run: |
           cd $GITHUB_WORKSPACE

@@ -8,11 +8,7 @@ With this pack your computers will no longer looks out of place!
 
 The pack change the textures of each block, and improve the GUIs of computers and turtles.
 
-You can find this pack on [Modrinth](https://modrinth.com/resourcepack/computercreate) and [CurseForge](https://www.curseforge.com/minecraft/texture-packs/computercreate)!
-
-> **Note**
-> This pack is made for the 1.18 version of minecraft, however you can use it in 1.19 just fine by ignoring the warning.
-> Other newer versions of minecraft such as 1.16 should be fine, but have not been tested.
+You can find this pack on [Modrinth](https://modrinth.com/resourcepack/computercreate) and [CurseForge](https://www.curseforge.com/minecraft/texture-packs/computercreate).
 
 ## Previews
 
@@ -59,7 +55,7 @@ You can find this pack on [Modrinth](https://modrinth.com/resourcepack/computerc
 
 ## I have an issue, contributing
 
-Feel free to open an issue on the [GitHub](https://github.com/ascpial/ComputerCreate), if you have any question or issues!
+Feel free to open an issue on the [GitHub](https://github.com/ascpial/ComputerCreate), if you have any question or issues.
 
 I you want to contribute, you can open a pull request and I will take a look at it.
 
@@ -67,7 +63,6 @@ I you want to contribute, you can open a pull request and I will take a look at 
 
 The pack is globally finished, with all blocks and items textures.
 
-Support for other mods focused on Computer Craft is planned (maybe), such as [CC:CB](https://modrinth.com/mod/cccbridge) and Advanced Peripherals.
 
 ## Reuse this resourcepack
 
