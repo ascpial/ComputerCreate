@@ -2,11 +2,11 @@
 
 <h1 align=center>ComputerCreate</h1>
 
-ComputerCreate is a resource pack for minecraft that apply the texture style of the [Create Mod](https://modrinth.com/mod/create) to all recent flavors of ComputerCraft (CC:Tweaked for forge, CC:Retistched for fabric).
+ComputerCreate is a resource pack for minecraft that applies the texture style of the [Create Mod](https://modrinth.com/mod/create) to all recent flavors of ComputerCraft (CC:Tweaked for forge, CC:Retistched for fabric).
 
 With this pack your computers will no longer looks out of place!
 
-The pack change the textures of each block, and improve the GUIs of computers and turtles.
+The pack changes the textures of each block, and improves the GUIs of computers and turtles.
 
 You can find this pack on [Modrinth](https://modrinth.com/resourcepack/computercreate) and [CurseForge](https://www.curseforge.com/minecraft/texture-packs/computercreate).
 
