@@ -35,15 +35,14 @@ ROOT_FILES = [
     "CREDITS.txt",
     "LICENCE.txt",
 ]
-ROOT_FOLDERS = [
-    "assets"
-]
+ROOT_FOLDERS = ["assets"]
 
 FILES = [
     "**/*.json",
     "**/*.mcmeta",
     "**/*.png",
 ]
+
 
 def get_resourcepack_files(path: str) -> list:
     files = []
@@ -56,36 +55,46 @@ def get_resourcepack_files(path: str) -> list:
                 recursive=True,
             ):
                 files.append(file)
-    
+
     for file in ROOT_FILES:
         file_path = os.path.join(path, file)
         if os.path.exists(file_path):
             files.append(file_path)
-    
+
     return files
+
 
 def create_archive(destination: str, files: list) -> zipfile.ZipFile:
     """Create a zip archive from a list of files
     destination: the path of the zip file
     files: the list of files to include in the archive
     """
-    archive = zipfile.ZipFile(destination, 'w')
+    archive = zipfile.ZipFile(destination, "w")
 
     for file in files:
         archive.write(file)
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        prog='Texture pack packager',
-        description='Takes the resource pack and removes all sources files',
+        prog="Texture pack packager",
+        description="Takes the resource pack and removes all sources files",
     )
-    parser.add_argument("--min", type=int, help="The minimum pack_format version to accept, crashes if not matching")
-    parser.add_argument("--max", type=int, help="The maximum pack_format version to accpet, crashes if not matching")
+    parser.add_argument(
+        "--min",
+        type=int,
+        help="The minimum pack_format version to accept, crashes if not matching",
+    )
+    parser.add_argument(
+        "--max",
+        type=int,
+        help="The maximum pack_format version to accpet, crashes if not matching",
+    )
 
     args = parser.parse_args()
 
     if args.min is not None or args.max is not None:
-        pack_version = json.load(open("pack.mcmeta", 'r'))["pack"]["pack_format"]
+        pack_version = json.load(open("pack.mcmeta", "r"))["pack"]["pack_format"]
         if args.min is not None and pack_version < args.min:
             print("The pack_format is below the minimal version required")
             sys.exit(10)
@@ -93,7 +102,7 @@ if __name__ == "__main__":
             print("The pack_format is greater than the maximal version required")
             sys.exit(11)
     try:
-        with open('./config.json') as file:
+        with open("./config.json") as file:
             configuration = json.load(file)
     except FileNotFoundError:
         configuration = {
@@ -101,14 +110,15 @@ if __name__ == "__main__":
             "destination": "ComputerCreate.zip",
             "file_outputs": [],
         }
-    files = get_resourcepack_files(configuration.get('folder', '.'))
-    create_archive(
-        configuration.get("destination", "output/ComputerCreate.zip"),
-        files,
+    files = get_resourcepack_files(configuration.get("folder", "."))
+    target = configuration.get("destination", "./output/ComputerCreate.zip")
+    os.makedirs(os.path.dirname(target), exist_ok=True)
+    create_archive(target, files)
+    print(
+        f"📄 Zip created at {configuration.get('destination', 'output/ComputerCreate.zip')}"
     )
-    print(f"📄 Zip created at {configuration.get('destination', 'output/ComputerCreate.zip')}")
 
-    for file in configuration.get('file_outputs', []):
+    for file in configuration.get("file_outputs", []):
         shutil.copy(
             configuration.get("destination", "output/ComputerCreate.zip"),
             file,

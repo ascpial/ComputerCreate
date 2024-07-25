@@ -63,6 +63,31 @@ I you want to contribute, you can open a pull request and I will take a look at 
 
 The pack is globally finished, with all blocks and items textures.
 
+## Working with the pack
+
+To work on developping the pack, you can clone the repository directly in the resourcepacks folder of a minecraft instance.
+
+If you work with multiple minecraft versions to make sure everything works and don't want to manually copy the resourcepack, a script is provided.
+This script also removes all unnecessary files such as documentation, screenshot and source files (GIMP files).
+
+You can run the script in a command line in this repository by running: `python distribute.py`.
+
+By default, the script will create a zip file `ComputerCreate.zip` in the folder `output`. You can also customize the behaviour of the script by creating a `config.json` file:
+
+```json
+{
+    "folder": ".",
+    "destination": "./output/ComputerCreate.zip",
+    "file_outputs": [
+        "~/.minecraft/resourcepacks/ComputerCreate.zip",
+        "~/prismlauncher/instances/Computers/.minecraft/resourcepacks/ComputerCreate.zip"
+    ]
+}
+```
+
+- `folder` is the location of the git repo, defaulting to `.` (current repository)
+- `destination` is the primary place where the resourcepack is compiled, defaulting to `./output/ComputerCreate.zip` (this cannot be empty) (the default location is ignored by git)
+- `file_outputs` is a list of places where to copy the compiled resourcepack in which you can add all your ComputerCraft instances, defaulting to `[]` (an empty list)
 
 ## Reuse this resourcepack
 
