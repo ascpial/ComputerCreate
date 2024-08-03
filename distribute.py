@@ -112,7 +112,8 @@ if __name__ == "__main__":
         }
     files = get_resourcepack_files(configuration.get("folder", "."))
     target = configuration.get("destination", "./output/ComputerCreate.zip")
-    os.makedirs(os.path.dirname(target), exist_ok=True)
+    if os.path.dirname(target) != "":
+        os.makedirs(os.path.dirname(target), exist_ok=True)
     create_archive(target, files)
     print(
         f"📄 Zip created at {configuration.get('destination', 'output/ComputerCreate.zip')}"
