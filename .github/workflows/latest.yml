@@ -29,7 +29,7 @@ jobs:
           game_endpoint: "minecraft"
           project_id: "603936"
           changelog: ${{ github.event.release.body }}
-          game_versions: "Minecraft 1.20"
+          game_versions: "Minecraft 1.20.1"
       
       # Upload the new release on Modrinth
       - name: Upload to Modrinth
