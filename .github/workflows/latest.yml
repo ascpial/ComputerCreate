@@ -27,7 +27,7 @@ jobs:
           token: "${{ secrets.CF_API_TOKEN }}"
           file_path: "./ComputerCreate.zip"
           game_endpoint: "minecraft"
-          project_id: "603936"
+          project_id: "70886,73242,73250,73407,75125"
           changelog: ${{ github.event.release.body }}
           game_versions: "Minecraft 1.20.1"
       
