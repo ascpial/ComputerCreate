@@ -4,6 +4,7 @@ on:
   release:
     types: [ published ]
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   publish:
@@ -29,7 +30,7 @@ jobs:
           game_endpoint: "minecraft"
           project_id: "603936"
           changelog: ${{ github.event.release.body }}
-          game_versions: "70886,73242,73250,73407,75125"
+          game_versions: "Minecraft 1.18,Minecraft 1.19,Minecraft.20"
       
       # Upload the new release on Modrinth
       - name: Upload to Modrinth
