@@ -20,18 +20,7 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           python3 distribute.py --min 15
-      
-      # Upload the new release on Curseforge
-      - name: "Upload to CurseForge"
-        uses: itsmeow/curseforge-upload@v3
-        with:
-          token: "${{ secrets.CF_API_TOKEN }}"
-          file_path: "./ComputerCreate.zip"
-          game_endpoint: "minecraft"
-          project_id: "603936"
-          changelog: ${{ github.event.release.body }}
-          game_versions: "Minecraft 1.18,Minecraft 1.19,Minecraft.20"
-      
+
       # Upload the new release on Modrinth
       - name: Upload to Modrinth
         uses: RubixDev/modrinth-upload@v1.0.0
